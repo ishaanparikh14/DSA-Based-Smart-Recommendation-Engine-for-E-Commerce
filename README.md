@@ -8,26 +8,26 @@
 
 ## Screenshots
 
+### Products Page
+![Products Page](assets/Screenshot%202026-06-09%20162951.png)
+
 ### Landing Page
-![Landing Page](assets/Screenshot%202026-06-09%20162951.png)
+![Landing Page](assets/Screenshot%202026-06-09%20163000.png)
 
-### Product Grid
-![Product Grid](assets/Screenshot%202026-06-09%20163000.png)
+### Time Complexity
+![Time Complexity](assets/Screenshot%202026-06-09%20163020.png)
 
-### Personalized Recommendations
-![Recommendations](assets/Screenshot%202026-06-09%20163020.png)
+### Data Structures Used
+![Data Structures Used](assets/Screenshot%202026-06-09%20163030.png)
 
-### DSA Visualizations
-![DSA Visualizations](assets/Screenshot%202026-06-09%20163030.png)
+### Recommendation Engine
+![Recommendation Engine](assets/Screenshot%202026-06-09%20163045.png)
 
-### Shopping Cart (Doubly Linked List)
-![Shopping Cart](assets/Screenshot%202026-06-09%20163045.png)
+### Working
+![Working](assets/Screenshot%202026-06-09%20163102.png)
 
-### Live DSA Activity Monitor
-![DSA Activity](assets/Screenshot%202026-06-09%20163102.png)
-
-### Additional View
-![Additional View](assets/Screenshot%202026-06-09%20164426.png)
+### Summary
+![Summary](assets/Screenshot%202026-06-09%20164426.png)
 
 ---
 
