@@ -2,8 +2,6 @@
 
 > A full-stack e-commerce recommendation system built entirely on classical Data Structures & Algorithms — **no Machine Learning, no neural networks, no black boxes.** Every recommendation is fully traceable and explainable.
 
-**Academic Project · CS-B2 DSA Lab · RVCE**
-
 ---
 
 ## Screenshots
@@ -802,14 +800,4 @@ All additional documentation lives in `docs/`:
 
 ---
 
-## Authors
 
-DSA Lab Team — Academic Project, RVCE
-
-## License
-
-Academic Project — DSA Implementation Demonstration
-
----
-
-*Built with classical algorithms, not machine learning. Every recommendation is explainable.* 🎓
