@@ -1,0 +1,11 @@
+# Requirements for DSA E-Commerce Engine
+
+# No external dependencies required for core functionality
+# All data structures and algorithms implemented from scratch
+
+# Optional: For enhanced testing
+# pytest>=7.0.0
+# coverage>=6.0
+
+# Optional: For type checking
+# mypy>=0.990

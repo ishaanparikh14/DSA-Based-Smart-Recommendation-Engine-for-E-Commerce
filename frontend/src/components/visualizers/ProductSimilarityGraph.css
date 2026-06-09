@@ -1,0 +1,335 @@
+.product-similarity-graph {
+    padding: 20px;
+    background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    min-height: 100vh;
+    color: #ffffff;
+}
+
+.graph-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.graph-header h2 {
+    font-size: 2.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+.graph-header p {
+    color: #a0aec0;
+    font-size: 1.1rem;
+}
+
+.graph-controls {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-group label {
+    font-size: 0.9rem;
+    color: #e2e8f0;
+    font-weight: 500;
+}
+
+.control-group input[type="range"] {
+    width: 200px;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.1);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.5);
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.5);
+    border: none;
+}
+
+.control-group select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-group select:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+.control-group select option {
+    background: #1a1f3a;
+    color: #ffffff;
+}
+
+.reset-btn {
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.reset-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.graph-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.graph-canvas {
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    background: #0a0e27;
+}
+
+.loading-state,
+.error-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    text-align: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-state p,
+.error-state p {
+    font-size: 1.2rem;
+    color: #a0aec0;
+}
+
+.error-state p {
+    color: #fc8181;
+}
+
+.node-details {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1a1f3a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-width: 250px;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.node-details h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #667eea;
+    font-size: 1.3rem;
+}
+
+.node-details p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: #4a5568;
+}
+
+.node-details strong {
+    color: #2d3748;
+}
+
+.node-details button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.node-details button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.graph-stats {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.graph-stats h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 6px 0;
+    font-size: 0.9rem;
+}
+
+.stat-label {
+    color: #a0aec0;
+    margin-right: 15px;
+}
+
+.stat-value {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.graph-legend {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.graph-legend h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #ffffff;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid #ffffff;
+}
+
+.legend-note {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    color: #a0aec0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.legend-note strong {
+    color: #ffffff;
+}
+
+/* Responsive design */
+@media (max-width: 1280px) {
+    .graph-canvas {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .graph-controls {
+        flex-direction: column;
+    }
+
+    .control-group input[type="range"] {
+        width: 100%;
+    }
+
+    .node-details {
+        position: static;
+        margin-top: 20px;
+    }
+
+    .graph-stats {
+        position: static;
+        margin-top: 20px;
+    }
+}
