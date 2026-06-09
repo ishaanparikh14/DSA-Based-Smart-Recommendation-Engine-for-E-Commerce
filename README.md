@@ -4,7 +4,7 @@
 
 ---
 
-## Screenshots
+## Implementation 
 
 ### Products Page
 ![Products Page](assets/Screenshot%202026-06-09%20162951.png)
